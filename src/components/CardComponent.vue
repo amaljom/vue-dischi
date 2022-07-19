@@ -1,6 +1,9 @@
 <template>
   <div class="card-size p-3">
-    <img :src="disc.poster" alt="">
+    <div>
+        <img :src="disc.poster" alt="">
+    </div>
+    
     <div class="text-center pt-2">
         <h4>{{disc.title}}</h4>
         <span class="pt-1 text-class">{{disc.author}}</span>
@@ -17,8 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 img{
-    height: 187px;
-    width: 187px;
+    width: 100%;
 }
 .card-size{
     height: 350px;

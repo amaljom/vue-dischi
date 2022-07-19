@@ -46,7 +46,7 @@
 
 .bg-card{
     background-color:#2e3a46;
-    width: calc(100% / 5 - 35px);
+    width: calc(100% / 5 - 30px);
 }
 .spinner{
     height: 120px;
