@@ -1,16 +1,17 @@
 <template>
   <div class="main-background">
     <div class="row col-8 mx-auto bg-dark">
-        <div class="col-2 bg-success">
-            ciaoooooo
-        </div>
+        <CardsList/>
     </div>
   </div>
 </template>
 
 <script>
+import CardsList from './CardsList';
 export default {
-
+    components: {
+        CardsList
+    }
 }
 </script>
 
