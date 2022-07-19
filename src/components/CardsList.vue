@@ -2,7 +2,7 @@
     <div class="p-0">
         <CardComponent class="col-2  bg-success"
         v-for="(disc,index) in discs" :key='index'
-        :discs=disc />
+        :disc=disc />
     </div>
 </template>
 
@@ -15,7 +15,7 @@
             return{
                 discs:[]
             }
-
+            
         },
         
         components:{
@@ -23,10 +23,12 @@
         },
         
         methods:{
+            
             getCards(){
                 axios.get('https://flynn.boolean.careers/exercises/api/array/music')
                 .then((result)=>{
                     this.discs = result.data.response;
+                    console.log(this.discs);
                 });
             }   
         },

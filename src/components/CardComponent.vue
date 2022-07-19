@@ -1,8 +1,8 @@
 <template>
   <div class="card-size p-3">
-    <img src="disc.poster" alt="">
+    <img :src="disc.poster" alt="">
     <div class="text-center">
-        <h2>{{ disc.author}}</h2>
+        <h2>ao annamo</h2>
         <p>foza jucve</p>
         <p>aaaaa</p>
     </div>
