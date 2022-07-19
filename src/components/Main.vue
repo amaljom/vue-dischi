@@ -1,6 +1,6 @@
 <template>
   <div class="main-background">
-    <div class="row col-8 mx-auto bg-dark">
+    <div class="row col-8 mx-auto pt-5">
         <CardsList/>
     </div>
   </div>

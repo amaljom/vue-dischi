@@ -1,6 +1,6 @@
 <template>
-    <div class="p-0">
-        <CardComponent class="col-2  bg-success"
+    <div class="p-0 d-flex flex-wrap justify-content-between">
+        <CardComponent class="bg-card my-2 text-white"
         v-for="(disc,index) in discs" :key='index'
         :disc=disc />
     </div>
@@ -38,8 +38,11 @@
     }
 </script>
 
-<style>
+<style lang="scss">
 
-
+.bg-card{
+    background-color:#2e3a46;
+    width: calc(100% / 5 - 35px);
+}
 
 </style>
