@@ -1,24 +1,43 @@
 <template>
-    <div class="col-2 card-size bg-success p-3">
-        <CardComponent/>
+    <div class="p-0">
+        <CardComponent class="col-2  bg-success"
+        v-for="(disc,index) in discs" :key='index'
+        :discs=disc />
     </div>
 </template>
 
 <script>
-import CardComponent from './CardComponent';
-export default {
-    components: {
-        CardComponent
+    import axios from 'axios';
+    import CardComponent from './CardComponent';
+
+    export default {
+        data: function(){
+            return{
+                discs:[]
+            }
+
+        },
+        
+        components:{
+            CardComponent,
+        },
+        
+        methods:{
+            getCards(){
+                axios.get('https://flynn.boolean.careers/exercises/api/array/music')
+                .then((result)=>{
+                    this.discs = result.data.response;
+                });
+            }   
+        },
+        created(){
+            this.getCards();
+        }
     }
-}
 </script>
 
 <style>
-.card-size{
-    height: 300px;
-    display: flex;
-    justify-content: center;
-}
+
 
 
 </style>

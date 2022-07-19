@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <img src="https://thumbs.dreamstime.com/b/anguria-quadrata-24909979.jpg" alt="">
+  <div class="card-size p-3">
+    <img src="disc.poster" alt="">
     <div class="text-center">
-        <h2>ao annamo</h2>
+        <h2>{{ disc.author}}</h2>
         <p>foza jucve</p>
         <p>aaaaa</p>
     </div>
@@ -11,12 +11,17 @@
 
 <script>
 export default {
-
+    props:['disc'],
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 img{
     height: 130px;
+}
+.card-size{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
 }
 </style>
