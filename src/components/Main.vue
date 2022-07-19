@@ -1,6 +1,10 @@
 <template>
   <div class="main-background">
-
+    <div class="row col-8 mx-auto bg-dark">
+        <div class="col-2 bg-success">
+            ciaoooooo
+        </div>
+    </div>
   </div>
 </template>
 
