@@ -11,13 +11,15 @@ import CardsList from './CardsList';
 export default {
     components: {
         CardsList
-    }
+    },
 }
+
+
 </script>
 
 <style>
 .main-background{
-    height: calc( 100vh - 80px);
+    height: calc( 100vh);
     background-color: #1E2D3B;
 }
 </style>
