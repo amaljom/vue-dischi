@@ -9,7 +9,7 @@
             <div class="spinner"> </div>
         </div>
         <div>
-            <SelectGenre/>
+            <SelectGenre @search=filterDiscs />
         </div>
     </div>
 </template>
@@ -24,23 +24,30 @@
         data: function(){
             return{
                 discs:[],
+                filtered:[]
                 
             }
             
         },
-        
+        props:{
+            'search':String
+        },
+
         components:{
             CardComponent,
             SelectGenre
         },
         methods:{
-            
             getCards(){
                 axios.get('https://flynn.boolean.careers/exercises/api/array/music')
                 .then((result)=>{
                     this.discs = result.data.response;
                 });
-            }   
+            }, 
+            
+            filterDiscs(filtro){
+                console.log(filtro);
+            }
         },
         created(){
             this.getCards();

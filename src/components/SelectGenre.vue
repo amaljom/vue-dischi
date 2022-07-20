@@ -1,13 +1,18 @@
 <template>
+<div>
+    <div class="aooo">
+        {{ Selected }}
+    </div>
     <div class="col-6 mx-auto">
-        <select class="form-select" aria-label="Default select example" v-model="selected">
+        <select class="form-select" aria-label="Default select example" v-model="Selected" @click="$emit('search','Selected')">
             <option disabled value="">scegli il genere</option> 
             <option>Pop</option>
             <option>Rock</option>
             <option>Metal</option>
             <option>Jazz</option>
         </select>
-    </div> 
+        </div>
+    </div>
    
 </template>
 
@@ -15,7 +20,7 @@
 export default {
     data: function(){
             return{
-                selected:'' 
+                Selected:'' 
             }
             
         },
