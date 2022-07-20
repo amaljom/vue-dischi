@@ -1,8 +1,5 @@
 <template>
     <div>
-        <div class="aooo">
-            {{ Selected }}
-        </div>
         <div class="col-6 mx-auto">
         <select class="form-select" aria-label="Default select example" v-model="Selected" @click="$emit('search',Selected )">
             <option disabled value="">scegli il genere</option> 
@@ -28,8 +25,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .aooo{
-        height: 50px;
-        background-color: white;
-    }
+    
 </style>

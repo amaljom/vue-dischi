@@ -12,7 +12,7 @@
             <SelectGenre @search=filterDiscs />
         </div>
     </div>
-    <div v-else class="p-0 d-flex flex-wrap justify-content-between">
+    <div v-else class="p-0 d-flex flex-wrap justify-content-around">
         <FilteredCard class="bg-card my-2 text-white"
             v-for="(filter,index) in filtered" :key='index'
             :filtered=filter />
