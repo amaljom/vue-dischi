@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="filtered.length===0">
         <div v-if="discs.length>9" class="p-0 d-flex flex-wrap justify-content-between">
             <CardComponent class="bg-card my-2 text-white"
             v-for="(disc,index) in discs" :key='index'
@@ -12,13 +12,18 @@
             <SelectGenre @search=filterDiscs />
         </div>
     </div>
+    <div v-else class="p-0 d-flex flex-wrap justify-content-between">
+        <FilteredCard class="bg-card my-2 text-white"
+            v-for="(filter,index) in filtered" :key='index'
+            :filtered=filter />
+    </div>
 </template>
 
 <script>
     import axios from 'axios';
     import CardComponent from './CardComponent';
     import SelectGenre from './SelectGenre';
-
+    import FilteredCard from './FilteredCard';
 
     export default {
         data: function(){
@@ -29,13 +34,12 @@
             }
             
         },
-        props:{
-            'search':String
-        },
+        props:['search'],
 
         components:{
             CardComponent,
-            SelectGenre
+            SelectGenre,
+            FilteredCard
         },
         methods:{
             getCards(){
@@ -46,7 +50,8 @@
             }, 
             
             filterDiscs(filtro){
-                console.log(filtro);
+                this.filtered=[...this.discs].filter((disc)=>disc.genre===filtro);
+                console.log(this.filtered.length);
             }
         },
         created(){
