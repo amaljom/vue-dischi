@@ -8,25 +8,31 @@
         <div v-else>
             <div class="spinner"> </div>
         </div>
+        <div>
+            <SelectGenre/>
+        </div>
     </div>
 </template>
 
 <script>
     import axios from 'axios';
     import CardComponent from './CardComponent';
+    import SelectGenre from './SelectGenre';
+
 
     export default {
         data: function(){
             return{
-                discs:[]
+                discs:[],
+                
             }
             
         },
         
         components:{
             CardComponent,
+            SelectGenre
         },
-        
         methods:{
             
             getCards(){
