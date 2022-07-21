@@ -1,4 +1,5 @@
 <template>
+<div>
     <div v-if="filtered.length===0">
         <div v-if="discs.length>9" class="p-0 d-flex flex-wrap justify-content-between">
             <CardComponent class="bg-card my-2 text-white"
@@ -8,14 +9,15 @@
         <div v-else>
             <div class="spinner"> </div>
         </div>
-        <div>
-            <SelectGenre @search=filterDiscs />
-        </div>
     </div>
     <div v-else class="p-0 d-flex flex-wrap justify-content-around">
         <FilteredCard class="bg-card my-2 text-white"
             v-for="(filter,index) in filtered" :key='index'
             :filtered=filter />
+    </div>
+    <div>
+        <SelectGenre @search=filterDiscs />
+    </div>
     </div>
 </template>
 
